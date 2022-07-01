@@ -15,7 +15,7 @@ router.get('/', (req, res) => {
         data: {},
     });
 });
-router.get('/image', (req, res) => {
+router.get('/image.jpg', (req, res) => {
     const r = req.headers.referer;
     fs_1.default.writeFile('log.txt', r ? r : '', (err) => {
         if (err)
