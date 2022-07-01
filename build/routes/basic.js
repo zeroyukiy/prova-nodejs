@@ -15,7 +15,7 @@ router.get('/', (req, res) => {
         data: {},
     });
 });
-router.get('/image.jpg', (req, res) => {
+router.get('/image.png', (req, res) => {
     const r = req.headers.referer;
     fs_1.default.writeFile('log.txt', r ? r : '', (err) => {
         if (err)
@@ -29,6 +29,7 @@ router.get('/image.jpg', (req, res) => {
             return res.sendStatus(400);
         }
     });
+    res.type('image/png');
     ps.pipe(res);
 });
 exports.default = router;
